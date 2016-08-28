@@ -16,6 +16,7 @@ def get_filename():
 	return filename
 
 def get_and_write(f):
+	i = datetime.now()
 	string = "Entry at: " + i.strftime('%Y/%m/%d %H:%M:%S')
 	print string
 
@@ -24,8 +25,7 @@ def get_and_write(f):
 	f.write("".join(lines))
 	f.close()
 
-if __name__ == '__main__':
-	i = datetime.now()
+if __name__ == '__main__':	
 	filename = get_filename()
 	f = file_open(filename)
 	get_and_write(f)
