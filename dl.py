@@ -2,6 +2,8 @@ import sys
 import os
 from datetime import datetime
 
+#FUNCIONS
+
 def file_open(filename):
 	if os.path.isfile(filename):
 		f = open(filename,"a")
