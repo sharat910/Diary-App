@@ -2,9 +2,8 @@ import sys
 import os
 from datetime import datetime
 
-#FUNCIONS
-
 def file_open(filename):
+	filename = "/home/sharat/learn/python/daily_log/" + filename
 	if os.path.isfile(filename):
 		f = open(filename,"a")
 		f.write("\n\n")
@@ -17,8 +16,7 @@ def get_filename():
 	filename = date + ".txt"
 	return filename
 
-def get_and_write(f):
-	i = datetime.now()
+def get_and_write(f):	
 	string = "Entry at: " + i.strftime('%Y/%m/%d %H:%M:%S')
 	print string
 
@@ -27,8 +25,10 @@ def get_and_write(f):
 	f.write("".join(lines))
 	f.close()
 
-if __name__ == '__main__':	
+if __name__ == '__main__':
+	i = datetime.now()	
 	filename = get_filename()
 	f = file_open(filename)
 	get_and_write(f)
+	
 	
